@@ -102,6 +102,7 @@
 
 .card button {
   margin-top: auto;
+  align-self: flex-start;
 }
 
 @media (min-width: 60rem) {
@@ -119,12 +120,14 @@
   background-color: var(--color-primary-400);
   color: #ffffff;
   border: 2px solid var(--color-primary-400);
-  padding: 0.75em 1.2em;
-  font-size: 1.15rem;
+  padding: 0.75em 1.8em;
+  font-size: 1.1rem;
+  font-weight: bold;
   margin-top: 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.3em;
   transition: background-color 0.3s ease-out;
   will-change: background-color;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
 
 .button_primary:hover {
@@ -145,6 +148,7 @@
   cursor: pointer;
   color: inherit;
   outline-color: var(--color-primary-400);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 /* .card:hover,
