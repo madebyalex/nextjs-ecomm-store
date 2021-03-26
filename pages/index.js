@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import products from '../products.json';
 import { initiateCheckout } from '../lib/payments.js';
+import products from '../products.json';
+import useCart from '../hooks/use-cart.js';
 
 const defaultCart = {
   products: {},
 };
 
 export default function Home() {
+  const cartTest = useCart();
+  console.log(cartTest);
   const [cart, updateCart] = useState(defaultCart);
 
   const cartItems = Object.keys(cart.products).map((key) => {
@@ -79,15 +82,21 @@ export default function Home() {
           The best cupcakes in the universe! Yay! 🙌
         </p>
 
-        <p className={styles.description}>
-          <strong>Items:</strong> {totalItems}
-          <br />
-          <strong>Total Costs:</strong> ${subTotal}
-          <br />
-          <button className={styles.button_primary} onClick={checkout}>
-            Check Out
-          </button>
-        </p>
+        <div className={styles.section__cart}>
+          <p>
+            <strong>Items:</strong>{' '}
+            <span className={styles.cart__qty}>{totalItems}</span>
+          </p>
+          <p>
+            <strong>Total Costs:</strong>{' '}
+            <span className={styles.cart__value}>${subTotal}</span>
+          </p>
+          <p>
+            <button className={styles.button_primary} onClick={checkout}>
+              Check Out
+            </button>
+          </p>
+        </div>
 
         <ul className={styles.grid}>
           {products.map((product) => {
