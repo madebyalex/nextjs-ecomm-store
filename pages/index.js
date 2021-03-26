@@ -32,6 +32,10 @@ export default function Home() {
     0
   );
 
+  const totalItems = cartItems.reduce((accumulator, { quantity }) => {
+    return accumulator + quantity;
+  }, 0);
+
   console.log('subTotal', subTotal);
 
   function addToCart({ id } = {}) {
@@ -76,7 +80,7 @@ export default function Home() {
         </p>
 
         <p className={styles.description}>
-          <strong>Items:</strong> 2
+          <strong>Items:</strong> {totalItems}
           <br />
           <strong>Total Costs:</strong> ${subTotal}
           <br />
