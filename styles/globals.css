@@ -1,3 +1,9 @@
+:root {
+  --color-primary-100: hsl(350, 85%, 92%);
+  --color-primary-400: hsl(352, 78%, 56%);
+  --color-primary-600: hsl(352, 78%, 60%);
+}
+
 html,
 body {
   padding: 0;

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "price_1IZMWTD3ELAPPWCW6mkR9Ri3",
+    "title": "Spring Melba",
+    "description": "A classic dessert made into a cupcake, of course! Sweet peach cake topped with a layer of buttercream and sweet tart bark.",
+    "price": "5.99",
+    "image": "/images/products/pic-cupcake-1@2x.jpg"
+  },
+  {
+    "id": "price_1IZMXRD3ELAPPWCWcCvzDQo6",
+    "title": "Triple Chocolate Torte",
+    "description": "Ooey, gooey, rich, and chewy – brownie like cake topped with triple chocolate ganache.",
+    "price": "7.45",
+    "image": "/images/products/pic-cupcake-2@2x.jpg"
+  },
+  {
+    "id": "price_1IZMYGD3ELAPPWCWOd9Na2Cw",
+    "title": "Strawberry Shortcake",
+    "description": "Deliciously sweet – real strawberry cake topped with fluffy strawberry buttercream.",
+    "price": "6.80",
+    "image": "/images/products/pic-cupcake-3@2x.jpg"
+  }
+]

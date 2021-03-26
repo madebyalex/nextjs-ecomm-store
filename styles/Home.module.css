@@ -73,16 +73,17 @@
 
 .grid {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 80rem;
   margin-top: 3rem;
+  list-style: none;
 }
 
 .card {
   margin: 1rem;
-  flex-basis: 45%;
+  flex-basis: calc(50% - 2rem);
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -90,14 +91,68 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.card:hover,
+.card p {
+  padding-bottom: 1.5rem;
+}
+
+.card button {
+  margin-top: auto;
+}
+
+@media (min-width: 60rem) {
+  .card {
+    flex-basis: calc(33% - 2rem);
+  }
+}
+
+.card img {
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.button_primary {
+  background-color: var(--color-primary-400);
+  color: #ffffff;
+  border: 2px solid var(--color-primary-400);
+  padding: 0.75em 1.2em;
+  font-size: 1.15rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease-out;
+  will-change: background-color;
+}
+
+.button_primary:hover {
+  background-color: var(--color-primary-600);
+  cursor: pointer;
+}
+
+.button_primary:focus {
+  outline-color: var(--color-primary-400);
+  outline-offset: 4px;
+}
+
+.button_primary:active {
+  transition: all 0s ease-out;
+  background-color: var(--color-primary-100);
+  /* background-color: transparent; */
+  border-color: transparent;
+  cursor: pointer;
+  color: inherit;
+  outline-color: var(--color-primary-400);
+}
+
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
-}
+} */
 
 .card h3 {
   margin: 0 0 1rem 0;
