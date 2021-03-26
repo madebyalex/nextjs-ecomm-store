@@ -13,7 +13,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Yummy Cupcakes Shop</h1>
 
-        <p className={styles.description}>The best cupcakes in the universe!</p>
+        <p className={styles.description}>
+          The best cupcakes in the universe! Yay! 🙌
+        </p>
 
         <ul className={styles.grid}>
           {products.map((product) => {
