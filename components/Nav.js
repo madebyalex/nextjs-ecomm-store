@@ -3,15 +3,15 @@ import IconShoppingBag from '../components/IconShoppingBag.js';
 import { useCart } from '../hooks/use-cart.js';
 
 export default function Nav() {
-  const { subTotal, totalItems } = useCart();
+  const { subTotal, checkout } = useCart();
 
   return (
     <header className={styles.topnav}>
       <div className={styles.topnav__wrap}>
-        <span className={styles.cart__details}>
+        <button className={styles.cart__details} onClick={checkout}>
           <IconShoppingBag />
           &nbsp;&nbsp;${subTotal}
-        </span>
+        </button>
       </div>
     </header>
   );

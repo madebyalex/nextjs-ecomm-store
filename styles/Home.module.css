@@ -15,6 +15,16 @@
 .topnav__wrap .cart__details {
   display: flex;
   align-items: center;
+  border-color: transparent;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.topnav__wrap .cart__details:focus,
+.topnav__wrap .cart__details:active {
+  background-color: hsl(0, 0%, 0);
+  outline-color: var(--color-primary-400);
+  outline-offset: 4px;
 }
 
 .container {
