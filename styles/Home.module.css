@@ -1,3 +1,22 @@
+.topnav {
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.topnav__wrap {
+  max-width: 76rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topnav__wrap .cart__details {
+  display: flex;
+  align-items: center;
+}
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;

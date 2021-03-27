@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import products from '../products.json';
-import useCart from '../hooks/use-cart.js';
+import { useCart } from '../hooks/use-cart.js';
 
 export default function Home() {
   const { subTotal, totalItems, addToCart, checkout } = useCart();
+
+  console.log(useCart());
 
   return (
     <div className={styles.container}>
