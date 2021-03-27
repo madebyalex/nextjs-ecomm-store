@@ -8,8 +8,6 @@ import { useCart } from '../hooks/use-cart.js';
 export default function Home() {
   const { subTotal, totalItems, addToCart, checkout } = useCart();
 
-  console.log(useCart());
-
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Yummy Cupcakes Shop</h1>
+        <h1 className={styles.title}>Fresh & Yummy</h1>
 
         <p className={styles.description}>
           The best cupcakes in the universe! Yay! 🙌
@@ -48,7 +46,9 @@ export default function Home() {
               <li key={id} className={styles.card}>
                 <Link href={`/products/${id}`}>
                   <a>
-                    <img src={image} alt={title} />
+                    <div className={styles.image__wrap}>
+                      <img src={image} alt={title} />
+                    </div>
                     <h3>{title}</h3>
                     <p>${price}</p>
                     <p>{description}</p>

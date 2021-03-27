@@ -52,8 +52,6 @@ export function useCartState() {
     return accumulator + quantity;
   }, 0);
 
-  console.log('subTotal', subTotal);
-
   function addToCart({ id } = {}) {
     updateCart((prev) => {
       let cartState = { ...prev };
