@@ -1,4 +1,6 @@
+// import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import products from '../products.json';
 import { useCart } from '../hooks/use-cart.js';
@@ -44,10 +46,14 @@ export default function Home() {
 
             return (
               <li key={id} className={styles.card}>
-                <img src={image} alt={title} />
-                <h3>{title}</h3>
-                <p>${price}</p>
-                <p>{description}</p>
+                <Link href={`/products/${id}`}>
+                  <a>
+                    <img src={image} alt={title} />
+                    <h3>{title}</h3>
+                    <p>${price}</p>
+                    <p>{description}</p>
+                  </a>
+                </Link>
                 <button
                   className={styles.button_secondary}
                   onClick={() => {
