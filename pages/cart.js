@@ -5,6 +5,7 @@ import { useCart } from '../hooks/use-cart';
 
 import Table from '../components/Table';
 import IconShoppingBag from '../components/IconShoppingBag';
+import InputNumber from '../components/InputNumber';
 import products from '../products.json';
 
 const columns = [
@@ -27,17 +28,51 @@ const columns = [
 ];
 
 export default function Cart() {
-  const { cartItems, checkout } = useCart();
+  const { cartItems, updateItem, checkout } = useCart();
+
+  // console.log(<InputNumber value='2' />);
 
   const data = cartItems.map((item) => {
     const product = products.find(({ id }) => id === item.id);
 
+    const Quantity = () => {
+      function handleOnSubmit(e) {
+        e.preventDefault();
+
+        const { currentTarget } = e;
+        const inputs = Array.from(currentTarget.elements);
+        const quantity = inputs.find((input) => input.name === 'quantity')
+          ?.value;
+
+        updateItem({
+          id: item.id,
+          quantity: quantity && parseInt(quantity),
+        });
+      }
+
+      return (
+        <form className={styles.quantity__form} onSubmit={handleOnSubmit}>
+          <InputNumber
+            type='number'
+            name='quantity'
+            className={styles.quantity__input}
+            min='0'
+            max='10'
+            defaultValue={item.quantity}
+            value={item.quantity}
+          />
+          <button>Update</button>
+        </form>
+      );
+    };
+
     return {
       id: item.id,
       title: product.title,
-      quantity: item.quantity,
+      quantity: <Quantity />,
       pricePerUnit: item.pricePerItem,
-      total: item.quantity * item.pricePerItem,
+      // total: item.quantity * item.pricePerItem,
+      total: Math.round(item.quantity * item.pricePerItem * 100) / 100,
     };
   });
 
