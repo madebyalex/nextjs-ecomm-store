@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import IconShoppingBag from '../components/IconShoppingBag.js';
 import { useCart } from '../hooks/use-cart.js';
 
 export default function Nav() {
-  const { subTotal, checkout } = useCart();
+  const { subTotal } = useCart();
 
   return (
     <header className={styles.topnav}>
