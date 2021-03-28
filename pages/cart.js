@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Cart.module.css';
 
+import { useCart } from '../hooks/use-cart';
+
 import Table from '../components/Table';
 import IconShoppingBag from '../components/IconShoppingBag';
-import { useCart } from '../hooks/use-cart';
+import products from '../products.json';
 
 const columns = [
   {
@@ -25,15 +27,19 @@ const columns = [
 ];
 
 export default function Cart() {
-  const data = [
-    {
-      id: 'my-product',
-      title: 'My Cool Product',
-      quantity: 1,
-      pricePerUnit: 10.0,
-      total: 10.0,
-    },
-  ];
+  const { cartItems, checkout } = useCart();
+
+  const data = cartItems.map((item) => {
+    const product = products.find(({ id }) => id === item.id);
+
+    return {
+      id: item.id,
+      title: product.title,
+      quantity: item.quantity,
+      pricePerUnit: item.pricePerItem,
+      total: item.quantity * item.pricePerItem,
+    };
+  });
 
   return (
     <div className={styles.container}>
@@ -51,7 +57,9 @@ export default function Cart() {
         <Table className={styles.table} data={data} columns={columns} />
 
         <p className={styles.checkout}>
-          <button className={styles.button}>Check Out</button>
+          <button className={styles.button} onClick={checkout}>
+            Check Out
+          </button>
         </p>
       </main>
 

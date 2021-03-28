@@ -81,6 +81,7 @@ export function useCartState() {
 
   return {
     cart,
+    cartItems,
     updateCart,
     subTotal,
     totalItems,
