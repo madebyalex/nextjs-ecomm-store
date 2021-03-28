@@ -12,10 +12,12 @@ export default function Nav() {
         <Link href='/'>
           <a className={styles.header__logo}>Yummy Cupcakes Shop</a>
         </Link>
-        <button className={styles.cart__details} onClick={checkout}>
-          <IconShoppingBag />
-          &nbsp;&nbsp;${subTotal}
-        </button>
+        <Link href='/cart'>
+          <a className={styles.cart__details}>
+            <IconShoppingBag />
+            &nbsp;&nbsp;${subTotal}
+          </a>
+        </Link>
       </div>
     </header>
   );
